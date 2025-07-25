@@ -1,3 +1,4 @@
+--Services
 local Players = game:GetService("Players")
 local Player = Players.LocalPlayer
 local PlayerGui = Player:WaitForChild("PlayerGui")
@@ -90,7 +91,7 @@ local FunctionManager = {
 
 function FunctionManager:register(name, callback, category, description)
 	category = category or "General"
-
+	
 	if not self.CategorizedFunctions[category] then
 		self.CategorizedFunctions[category] = {}
 		table.insert(self.Categories, category)
@@ -197,7 +198,7 @@ notificationLayout.Padding = UDim.new(0, 6)
 notificationLayout.HorizontalAlignment = Enum.HorizontalAlignment.Right
 notificationLayout.VerticalAlignment = Enum.VerticalAlignment.Bottom
 notificationLayout.Parent = notificationContainer
-Notify("Welcome to pr0ject f4ms!", "now you can f up this server :)!", 3)
+Notify("Welcome to C00lClan!", "Have fun!", 3)
 -- Main frame
 local mainFrame = Instance.new("Frame")
 mainFrame.Name            = generate_string(math_random(1, 10))
@@ -211,12 +212,12 @@ mainFrame.Parent          = screenGui
 local tooltip = Instance.new("TextLabel", screenGui)
 tooltip.Name               = generate_string(math_random(1, 10))
 tooltip.Size               = UDim2.new(0, 200, 0, 40)
-tooltip.BackgroundColor3   = Color3.fromRGB(255,255,255)
+tooltip.BackgroundColor3   = Color3.fromRGB(30,30,30)
 tooltip.BorderSizePixel    = 0
 tooltip.Visible            = false
 tooltip.ZIndex             = 100
 tooltip.ClipsDescendants   = false
-tooltip.TextColor3 = Color3.fromRGB(0, 0, 0)
+tooltip.TextColor3 = Color3.fromRGB(255, 255, 255)
 tooltip.TextWrapped = true
 -- Title bar
 local titleBar = Instance.new("Frame", mainFrame)
@@ -229,10 +230,10 @@ local titleLabel = Instance.new("TextLabel", titleBar)
 titleLabel.Size           = UDim2.new(1,-60,1,0)
 titleLabel.Position       = UDim2.new(0,4,0,0)
 titleLabel.BackgroundTransparency = 1
-titleLabel.Text           = "pr0ject f4rms v.0.0.1"
+titleLabel.Text           = "C00LCLAN V1"
 titleLabel.Font           = Enum.Font.SourceSansBold
 titleLabel.TextSize       = 18
-titleLabel.TextColor3     = Color3.new(0,0,0)
+titleLabel.TextColor3     = Color3.new(1,1,1)
 titleLabel.TextXAlignment = Enum.TextXAlignment.Left
 titleLabel.Name           = generate_string(math_random(1, 10))
 
@@ -288,7 +289,7 @@ local catLabel = Instance.new("TextLabel", catNav)
 catLabel.Size             = UDim2.new(1,-100,1,0)
 catLabel.Position         = UDim2.new(0,50,0,0)
 catLabel.BackgroundTransparency = 1
-catLabel.Text             = "All
+catLabel.Text             = "All"
 catLabel.Font             = Enum.Font.SourceSansBold
 catLabel.TextSize         = 18
 catLabel.TextColor3       = Color3.new(1,1,1)
@@ -366,7 +367,7 @@ local function updateGrid()
 		btn.TextWrapped      = true
 		btn.Parent           = gridFrame
 		btn.Name             = generate_string(math_random(1, 10))
-
+		
 		-- tooltip
 		local desc = FunctionManager.Descriptions[name]
 		btn.MouseMoved:Connect(function()
@@ -1621,7 +1622,7 @@ FunctionManager:register("No‑Clip", function()
 
 		while noclipOn == true do
 			task.wait(0.01)
-
+		
 			for _, part in ipairs(Character:GetDescendants()) do
 				if part:IsA("BasePart") then
 					part.CanCollide = false
@@ -1944,13 +1945,3 @@ end, "Troll", "Credits to the original maker!")
 
 --init
 updateGrid()
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
